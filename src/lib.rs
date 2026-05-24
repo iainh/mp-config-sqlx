@@ -9,6 +9,9 @@ use std::error::Error as StdError;
 use std::fmt;
 use std::time::Duration;
 
+#[cfg(feature = "macros")]
+pub use mp_config_sqlx_macros::Datasources;
+
 #[cfg(feature = "mysql")]
 use sqlx::MySqlPool;
 #[cfg(feature = "postgres")]

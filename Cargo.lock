@@ -643,7 +643,17 @@ name = "mp-config-sqlx"
 version = "0.1.0"
 dependencies = [
  "mp-config",
+ "mp-config-sqlx-macros",
  "sqlx",
+]
+
+[[package]]
+name = "mp-config-sqlx-macros"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

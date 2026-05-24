@@ -1,3 +1,7 @@
+[workspace]
+members = [".", "mp-config-sqlx-macros"]
+resolver = "2"
+
 [package]
 name = "mp-config-sqlx"
 version = "0.1.0"
@@ -11,10 +15,12 @@ categories = ["config", "database"]
 
 [dependencies]
 mp-config = { version = "0.1.0", path = "../mp-config" }
+mp-config-sqlx-macros = { version = "0.1.0", path = "mp-config-sqlx-macros", optional = true }
 sqlx = { version = "0.8", default-features = false }
 
 [features]
-default = ["runtime-tokio", "postgres", "mysql", "sqlite"]
+default = ["runtime-tokio", "postgres", "mysql", "sqlite", "macros"]
+macros = ["dep:mp-config-sqlx-macros"]
 runtime-tokio = ["sqlx/runtime-tokio"]
 postgres = ["sqlx/postgres"]
 mysql = ["sqlx/mysql"]
