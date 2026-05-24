@@ -1,0 +1,21 @@
+[package]
+name = "mp-config-sqlx"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "SQLx datasource setup from mp-config configuration."
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["config", "microprofile", "sqlx", "database"]
+categories = ["config", "database"]
+
+[dependencies]
+mp-config = { version = "0.1.0", path = "../mp-config" }
+sqlx = { version = "0.8", default-features = false }
+
+[features]
+default = ["runtime-tokio", "postgres", "mysql", "sqlite"]
+runtime-tokio = ["sqlx/runtime-tokio"]
+postgres = ["sqlx/postgres"]
+mysql = ["sqlx/mysql"]
+sqlite = ["sqlx/sqlite"]
