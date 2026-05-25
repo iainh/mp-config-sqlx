@@ -14,7 +14,7 @@ keywords = ["config", "microprofile", "sqlx", "database"]
 categories = ["config", "database"]
 
 [dependencies]
-mp-config = { version = "0.1.0", path = "../mp-config" }
+mp-config = { git = "ssh://git@github.com/iainh/mp-config.git", tag = "v0.1.1" }
 mp-config-sqlx-macros = { version = "0.1.0", path = "mp-config-sqlx-macros", optional = true }
 sqlx = { version = "0.8", default-features = false }
 
